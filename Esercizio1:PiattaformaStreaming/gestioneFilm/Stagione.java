@@ -15,11 +15,18 @@ public class Stagione{
     }
 
     // getter e setter
+    // I metodi getter e setter servono per accedere e modificare in modo controllato
+    // e sicuro gli attributi privati di un oggetto all'interno di una classe
+    // Tasto destro --> Source Action --> Generate Getters and Setters
+
     public int getNrEpisodi() {
         return nrEpisodi;
     }
 
-    public void setNrEpisodi(int nrEpisodi) {
+    public void setNrEpisodi(int nrEpisodi) throws Exception {
+        if (nrEpisodi <= 0) {
+            throw new Exception("Il numero di episodi non può essere negativo.");
+        }
         this.nrEpisodi = nrEpisodi;
     }
 
